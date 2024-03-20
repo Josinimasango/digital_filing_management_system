@@ -1,0 +1,131 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block content %}
+
+{% if request.user.is_authenticated %}
+  <h3><a href="{% url 'doctor_logout' %}">Logout</a></h3>
+  <h3><a class="text-success" href="{% url 'doctor_reset_password' %}">Reset Password</a></h3>      
+  <h3><a class="text-danger" href="{% url 'doctor_dashboard' %}">Dashboard</a></h3>
+{% else %}
+<div class=login-container>
+  <h2><a class="btn btn-primary"  href="{% url 'doctor_login' %}">Login</a></h2>
+</div>   
+{% endif %}
+
+<style>
+  h1{
+    text-align: center;
+  }
+
+  .card {
+    text-align: center;
+    background-color: black;
+    color: white;
+  }
+
+  .card img{
+    display: block;
+    margin: 0 auto;
+  }
+
+  h2{
+  color: black;
+  display: flex;
+  justify-content: space-between;
+       
+  }
+  
+  .mission-statement{
+    background-color: black;
+  }
+
+  .mission-statement img {
+    display: block;
+    margin: 0 auto;
+    width: 300px;
+    height: auto;
+  }
+
+  .mission-statement {
+    flex: 1 1 45%; 
+    margin: 10px; 
+    color: white;
+  }
+
+  .mission-statement p{
+    text-align: center;
+  }
+   .mission-statement h1{
+    text-decoration: underline;
+    
+   }
+
+   .flex-container {
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    padding: 0;
+    word-spacing: 10px;
+    margin: 5px 10px 5px 10px;
+    background-color: #F6F2FE;
+  }  
+
+  .about-header{
+    text-decoration: underline;
+    text-align: center;
+  }
+
+  .about-statement{
+    text-align: center;
+  }
+
+  footer{
+    background-color: #f6f2fe;
+  }
+
+  
+</style>
+<div class="card">
+  <h1 class="card-title">Welcome To Health Digi Filing System</h1>
+  <em class="card-text">Filing made simple!</em>
+  <br /> 
+  <img src="{% static 'images/nurses.jpg' %}" alt="Nurses" style="width: 350px; height: auto">
+</div>
+<div class="flex-container">
+  <li>
+    <img  src="{% static 'images/tb.png' %}" alt="Hiv"  style="width: 300px; height: auto">
+  </li>
+  <li>
+    <img  src="{% static 'images/pills.jpg' %}" alt="Hiv"  style="width: 300px; height: 300px">
+  </li>
+  <li>
+    <img  src="{% static 'images/ribbon.jpg' %}" alt="Hiv"  style="width: 300px; height: auto">
+  </li>
+</div>
+<div class="flex-container">
+  <li><a class="tubercol0sis" href="https://www.webmd.com/lung/tuberculosis-prevention">Learn More</a></li>
+  <li><a class="prep" href="https://www.cdc.gov/hiv/risk/prep/index.html#:~:text=Pre%2Dexposure%20prophylaxis%20(or%20PrEP,use%20by%20at%20least%2074%25.">Learn More</a></li>
+  <li><a class="reviews" href="https://www.hiv.gov/hiv-basics/hiv-testing/just-diagnosed-whats-next/living-with-hiv#:~:text=Most%20people%20with%20HIV%20can,attention%20to%20your%20mental%20health.">Stories</a></li>
+  </div>
+<div class="mission-statement">
+<img  src="{% static 'images/files.jpg' %}" alt="Hiv"  style="width: 300px; height: auto">
+<h1>Our Mission</h1>
+<p>Our mission is to revolutionize healthcare record management by providing a secure, efficient, and accessible <br />digital filing system for public clinics within the health department. Through innovative technology <br />and a commitment to excellence, we aim to streamline record-keeping processes, enhance data security and <br />privacy, and improve the overall quality of healthcare services. By empowering healthcare professionals with timely <br />access to patient information and fostering a patient-centered approach, we strive to positively impact patient outcomes and experiences <br />while advancing the delivery of healthcare in our community.</p>
+</div>
+<footer>
+  <h3 class=about-header>About</h3>
+  <p class=about-statement>As a former filing clerk intern under the Department of Health, I observed firsthand the challenges patients face when queuing <br />for long hours to retrieve their medical records.<br /> This issue is particularly detrimental to patients requiring regular follow-up visits, such as those managing HIV and TB conditions.<br /> Prolonged waiting times not only inconvenience patients but also discourage them from seeking necessary<br /> medical care, including collecting their medication.
+    By transitioning to a <br />digital filing system, we aim to alleviate the burden on patients and improve their <br />overall experience with healthcare services. Quicker access to medical records means shorter waiting times,<br /> reducing patient frustration and increasing the likelihood of follow-up visits.
+    </p>
+    <div class=social-icons>
+    <a href="https://github.com/Josinimasango/digitalfiling.git" target="_blank">
+      <img src="{% static 'images/github.png' %}" alt="GitHub Logo" style="width: 50px; height: auto" >
+    </a>
+    <a href="https://twitter.com/Nelisiwejosini" target="_blank">
+      <img src="{% static 'images/twitter.png' %}" alt="Twitter Logo" style="width: 50px; heigt: auto">
+    </a>
+    <a href="www.linkedin.com/in/nelisiwe-masango-831b1a278" target="_blank">
+      <img src="{% static 'images/linkedin.png' %}" alt="LinkedIn Logo" style="width: 50px; height: auto">
+    </div> 
+</footer>
+{% endblock %}
