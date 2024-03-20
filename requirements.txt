@@ -25,9 +25,8 @@ fqdn==1.5.1
 greenlet==3.0.3
 idna==3.6
 ipykernel==6.28.0
-ipython==8.19.0
 ipywidgets==8.1.1
-isoduration==20.11.0
+isoduration=20.11.0
 itsdangerous==2.1.2
 jedi==0.19.1
 Jinja2==3.1.2
