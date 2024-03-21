@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-)1=ql_obkn@xu6zxrvr4qxlzn@c%&a++n7=c(mau+do!3a9!oh
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['.vercel.app','.now.sh', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -83,7 +83,7 @@ DATABASES = {
         'NAME':'filing',
         'USER':'postgres',
         'PASSWORD':'Nelisiwe@94',
-        'HOST':'localhost',
+        'HOST':'localhost','127.0.0.1','https://digital-filing-management-system.vercel.app'
         'PORT':'5433',
     }
 }
@@ -124,10 +124,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
-if DEBUG:
-    STATICTFILES_DIRS = [BASE_DIR / "static"]
+
+STATICTFILES_DIRS = [BASE_DIR / "static"]
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
+
+MEDIA_URL ="img/"
+MEDIA_ROOT = BASE_DIR/'media'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
