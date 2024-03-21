@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-)1=ql_obkn@xu6zxrvr4qxlzn@c%&a++n7=c(mau+do!3a9!oh
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app','.now.sh', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['digital-filing-management-system.vercel.app','.now.sh', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -83,7 +83,7 @@ DATABASES = {
         'NAME':'filing',
         'USER':'postgres',
         'PASSWORD':'Nelisiwe@94',
-        'HOST':'localhost','127.0.0.1','https://digital-filing-management-system.vercel.app'
+        'HOST':'localhost',
         'PORT':'5433',
     }
 }
