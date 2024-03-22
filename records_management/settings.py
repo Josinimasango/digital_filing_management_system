@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import os
+import media
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -26,7 +27,7 @@ SECRET_KEY = 'django-insecure-)1=ql_obkn@xu6zxrvr4qxlzn@c%&a++n7=c(mau+do!3a9!oh
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['digital-filing-management-system.vercel.app','.now.sh', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['.vercel.app','.now.sh', 'localhost', '127.0.0.1']
 
 
 # Application definition
