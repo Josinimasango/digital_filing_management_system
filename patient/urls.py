@@ -1,10 +1,7 @@
 from django.urls import path
 from . import views
-from django.urls import path, include
 from django.conf.urls.static import static
-urlpatterns= [
-    path('admin/', admin.site.urls),
-    path('', include('patient.urls')),    
+urlpatterns= [    
     path('',views.home,name='home'),
     path('doctor/', views.doctor_login, name='doctor_login'),
     path('doctor/login',views.doctor_login,name='doctor_login'),
