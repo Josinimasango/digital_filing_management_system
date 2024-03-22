@@ -10,6 +10,3 @@ urlpatterns= [
     path('doctor/dashboard',views.doctor_dashboard,name='doctor_dashboard'),
     path('doctor/quick-add-patient',views.quick_add_patient,name='quick_add_patient'),
 ]
-
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
