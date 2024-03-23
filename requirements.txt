@@ -1,5 +1,7 @@
 asgiref==3.7.2
+azure-cognitiveservices-speech==1.36.0
 Django==4.2.11
+media==0.1.6
 psycopg2-binary==2.9.9
 sqlparse==0.4.4
 tzdata==2024.1
