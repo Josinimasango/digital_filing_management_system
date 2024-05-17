@@ -81,9 +81,9 @@ WSGI_APPLICATION = 'records_management.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'df4k0guhq05faa',
-        'USER':'u74mar23fgb1df',
-        'PASSWORD':'p95ce2f628fac6e9ee67757328c4e198e82e81415a73c72c609ab8d1901734d20',
+        'NAME': 'dbbjk274e39itt',
+        'USER':'ud0g11787bme5l',
+        'PASSWORD':'p6b5d4561090121a8c4d8fb458b0243973622a3cfa32fb7663bae6cff99290296',
         'HOST':'c5hilnj7pn10vb.cluster-czrs8kj4isg7.us-east-1.rds.amazonaws.com',
         'PORT':'5432',
     }
