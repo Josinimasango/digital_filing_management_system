@@ -1,7 +1,7 @@
 from django.urls import path
 from . import views
-
-urlpatterns= [
+from django.conf.urls.static import static
+urlpatterns= [    
     path('',views.home,name='home'),
     path('doctor/', views.doctor_login, name='doctor_login'),
     path('doctor/login',views.doctor_login,name='doctor_login'),
