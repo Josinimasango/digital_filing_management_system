@@ -27,11 +27,10 @@ SECRET_KEY = 'django-insecure-)1=ql_obkn@xu6zxrvr4qxlzn@c%&a++n7=c(mau+do!3a9!oh
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-<<<<<<< HEAD
+
 ALLOWED_HOSTS = ['.vercel.app', 'localhost', '127.0.0.1', 'digitalrecords-055869a266a1.herokuapp.com']
-=======
 ALLOWED_HOSTS = ['.vercel.app','.now.sh', 'localhost', '127.0.0.1']
->>>>>>> 41634bffdf85f118b7b42edc391796574a5b6108
+
 
 
 # Application definition
@@ -82,23 +81,11 @@ WSGI_APPLICATION = 'records_management.wsgi.application'
 
 DATABASES = {
     'default': {
-<<<<<<< HEAD
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': 'df4k0guhq05faa',
-        'ENGINE':'django.db.backends.postgresql_psycopg2',
-        'NAME':'filing',
         'USER':'u74mar23fgb1df',
         'PASSWORD':'p95ce2f628fac6e9ee67757328c4e198e82e81415a73c72c609ab8d1901734d20',
         'HOST':'c5hilnj7pn10vb.cluster-czrs8kj4isg7.us-east-1.rds.amazonaws.com',
-=======
-        #'ENGINE': 'django.db.backends.sqlite3',
-        #'NAME': BASE_DIR / 'db.sqlite3',
-        'ENGINE':'django.db.backends.postgresql',
-        'NAME':'project',
-        'USER':'postgres',
-        'PASSWORD':'Nelisiwe@94',
-        'HOST':'127.0.0.1',
->>>>>>> 41634bffdf85f118b7b42edc391796574a5b6108
         'PORT':'5432',
     }
 }
@@ -138,15 +125,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-<<<<<<< HEAD
+
 # STATIC_URL = 'static/'
 
-
-=======
-STATIC_URL = 'static/'
-
-STATICTFILES_DIRS = [BASE_DIR / "static"]
->>>>>>> 41634bffdf85f118b7b42edc391796574a5b6108
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = "/static/"
 django_heroku.settings(locals())
