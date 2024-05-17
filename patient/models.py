@@ -8,7 +8,7 @@ GENDER_CHOICES=(
 class Patient(models.Model):
     name=models.CharField(max_length=200)
     age=models.IntegerField(default=0)
-    gender=models.CharField(choices=GENDER_CHOICES,default='male')
+    gender=models.CharField(choices=GENDER_CHOICES,default='male',max_length=10)
     mobile=models.IntegerField(null=True)
     address=models.TextField(null=True)
     Detail=models.TextField(null=True)
