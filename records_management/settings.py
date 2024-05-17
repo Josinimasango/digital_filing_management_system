@@ -9,9 +9,9 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
-
-from pathlib import Path
 import os
+import django_heroku
+from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -78,12 +78,12 @@ WSGI_APPLICATION = 'records_management.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': 'df4k0guhq05faa',
         'ENGINE':'django.db.backends.postgresql_psycopg2',
         'NAME':'filing',
-        'USER':'postgres',
-        'PASSWORD':'Nelisiwe@94',
-        'HOST':'localhost',
+        'USER':'u74mar23fgb1df',
+        'PASSWORD':'p95ce2f628fac6e9ee67757328c4e198e82e81415a73c72c609ab8d1901734d20',
+        'HOST':'c5hilnj7pn10vb.cluster-czrs8kj4isg7.us-east-1.rds.amazonaws.com',
         'PORT':'5432',
     }
 }
@@ -123,11 +123,12 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'static/'
-if DEBUG:
-    STATICTFILES_DIRS = [BASE_DIR / "static"]
+# STATIC_URL = 'static/'
+
+
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
+STATIC_URL = "/static/"
+django_heroku.settings(locals())
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
