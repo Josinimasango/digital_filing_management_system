@@ -3,6 +3,9 @@ from django.contrib.auth import authenticate,login,logout
 from django.urls import reverse_lazy
 from django.contrib import messages
 
+from.forms import QuickPatientForm,PatientForm
+from.models import Patient
+
 def home(request):
     return render(request,'home.html')
 
@@ -48,4 +51,79 @@ def doctor_dashboard(request):
     
 # Doctor Quick Add Patient
 def quick_add_patient(request):
-    return render(request,'quick-add-patient-form.html') 
+    if request.method == 'POST':
+        form=QuickPatientForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Patient added successfully!")
+            return redirect('quick_add_patient')    
+        else:
+            messages.warning(request, "Something went wrong.")
+            return redirect('quick_add_patient')  
+    else:       
+        form=QuickPatientForm
+        return render(request,'quick-add-patient-form.html', {
+            'form':form
+    }) 
+
+# manage patients        
+def all_patients(request):
+    data=Patient.objects.all().order_by("-id")
+    return render(request,'all-patients.html',{'data':data})       
+
+# Doctor Add Patient
+def add_patient(request):
+    if request.method == 'POST':
+        form=PatientForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Patient added successfully!")
+            return redirect('add_patient')    
+        else:
+            messages.warning(request, "Something went wrong.")
+            return redirect('add_patient')  
+    else:       
+        form=PatientForm
+        return render(request,'add-patient-form.html', {
+            'form':form
+    }) 
+        
+# Doctor Update Patient        
+def update_patient(request,id):
+    patient=Patient.objects.get(id=id)
+    if request.method == 'POST':
+        form=PatientForm(request.POST,instance=patient)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Patient updated successfully!")
+            return redirect('update_patient',id)    
+        else:
+            messages.warning(request, "Something went wrong.")
+            return redirect('update_patient',id)  
+    else:       
+        form=PatientForm(instance=patient)
+        return render(request,'update-patient-form.html', {
+            'form':form
+    }) 
+
+def delete_patient(request,id):
+    Patient.objects.get(id=id).delete()
+    messages.success(request, "Patient deleted successfully!")
+    return redirect('all_patients')  
+
+def email_template(request):
+    return render(request,'email_template.html')  
+
+def n_patients(request):
+    patients=Patient.objects.filter(visit_date__lt=date.today())
+    for patient in patients:
+        nextVisitDate=patient.visit_date+timedelta(days=patient.next_visit)
+        notificationDate=nextVisitDate-timedelta(days=1)
+        if notification == date.today:
+           print('send notification')
+    return render(request, 'n_patients.html',{
+    
+
+'patients':patients
+})
+    

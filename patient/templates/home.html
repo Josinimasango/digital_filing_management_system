@@ -3,16 +3,31 @@
 {% block content %}
 
 {% if request.user.is_authenticated %}
-  <h3><a href="{% url 'doctor_logout' %}">Logout</a></h3>
-  <h3><a class="text-success" href="{% url 'doctor_reset_password' %}">Reset Password</a></h3>      
-  <h3><a class="text-danger" href="{% url 'doctor_dashboard' %}">Dashboard</a></h3>
+<div class="row mt-3">
+  <div class="col-3">
+      <div class="list-group">
+          <a href="{% url 'doctor_logout' %}" class="list-group-item list-group-item-action{% if 'doctor-logout' in request.path %} activate{% endif %}">Logout</a>
+          <a href="{% url 'doctor_reset_password' %}" class="list-group-item list-group-item-action{% if 'dashboard' in request.path %} activate{% endif %}">Reset Password</a>
+          <a href="{% url 'doctor_dashboard' %}" class="list-group-item list-group-item-action">Dashboard</a> 
+      </div>
+    </div>
+  </div> 
 {% else %}
 <div class=login-container>
-  <h2><a class="btn btn-primary"  href="{% url 'doctor_login' %}">Login</a></h2>
-</div>   
+  <h2><a class="btn btn-success"  href="{% url 'doctor_login' %}">Login</a></h2>
+</div>  
 {% endif %}
 
+
+
+<br />
+
 <style>
+
+  body{
+    background-color: #F5F1FE;
+  }
+
   h1{
     text-align: center;
   }
@@ -90,7 +105,9 @@
   <em class="card-text">Filing made simple!</em>
   <br /> 
   <img src="{% static 'images/nurses.jpg' %}" alt="Nurses" style="width: 350px; height: auto">
+  <br />
 </div>
+<br />
 <div class="flex-container">
   <li>
     <img  src="{% static 'images/tb.png' %}" alt="Hiv"  style="width: 300px; height: auto">
@@ -103,9 +120,9 @@
   </li>
 </div>
 <div class="flex-container">
-  <li><a class="tubercol0sis" href="https://www.webmd.com/lung/tuberculosis-prevention">Learn More</a></li>
-  <li><a class="prep" href="https://www.cdc.gov/hiv/risk/prep/index.html#:~:text=Pre%2Dexposure%20prophylaxis%20(or%20PrEP,use%20by%20at%20least%2074%25.">Learn More</a></li>
-  <li><a class="reviews" href="https://www.hiv.gov/hiv-basics/hiv-testing/just-diagnosed-whats-next/living-with-hiv#:~:text=Most%20people%20with%20HIV%20can,attention%20to%20your%20mental%20health.">Stories</a></li>
+  <li><a class="btn btn-sm btn-info" href="https://www.webmd.com/lung/tuberculosis-prevention">Stop TB</a></li>
+  <li><a class="btn btn-sm btn-info" href="https://www.cdc.gov/hiv/risk/prep/index.html#:~:text=Pre%2Dexposure%20prophylaxis%20(or%20PrEP,use%20by%20at%20least%2074%25.">PrEp Up</a></li>
+  <li><a class="btn btn-sm btn-info" href="https://www.hiv.gov/hiv-basics/hiv-testing/just-diagnosed-whats-next/living-with-hiv#:~:text=Most%20people%20with%20HIV%20can,attention%20to%20your%20mental%20health.">Stories</a></li>
   </div>
 <div class="mission-statement">
 <img  src="{% static 'images/files.jpg' %}" alt="Hiv"  style="width: 300px; height: auto">
@@ -124,8 +141,12 @@
     <a href="https://twitter.com/Nelisiwejosini" target="_blank">
       <img src="{% static 'images/twitter.png' %}" alt="Twitter Logo" style="width: 50px; heigt: auto">
     </a>
-    <a href="www.linkedin.com/in/nelisiwe-masango-831b1a278" target="_blank">
+    <a href="http://www.linkedin.com/in/nelisiwe-masango-831b1a278" target="_blank">
       <img src="{% static 'images/linkedin.png' %}" alt="LinkedIn Logo" style="width: 50px; height: auto">
     </div> 
 </footer>
+</body>
+</html>
+
 {% endblock %}
+
